@@ -16,8 +16,8 @@
   <header class="site-header">
     <nav class="navbar navbar-light py-2">
       <div class="container-fluid">
-        <a class="brand" href="login.html">Pinapagawa</a>
-        <a class="btn btn-ghost btn-sm" href="login.html">Log in</a>
+        <a class="brand" href="{{ url('/login') }}">Pinapagawa</a>
+        <a class="btn btn-ghost btn-sm" href="{{ url('/login') }}">Log in</a>
       </div>
     </nav>
   </header>
@@ -47,7 +47,9 @@
           <h2 class="h4 mb-1">Register</h2>
           <p class="mb-4">Enter your details.</p>
 
-          <form action="login.html" method="get" novalidate>
+          <form action="{{ url('/register') }}" method="POST">
+			      @csrf
+
             <div class="mb-3">
               <label for="fullName" class="form-label">Full name</label>
               <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Juan Dela Cruz" autocomplete="name" required />
@@ -87,17 +89,11 @@
               </div>
             </div>
 
-            <!-- <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox" id="agreeTerms" name="agreeTerms" required />
-              <label class="form-check-label" for="agreeTerms">
-                I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.
-              </label>
-            </div> -->
 
             <button type="submit" class="btn btn-primary text-white w-100">Create account</button>
           </form>
 
-          <p class="text-center mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Already registered? <a href="login.html">Log in</a></p>
+          <p class="text-center mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Already registered? <a href="{{ url('/login') }}">Log in</a></p>
         </div>
       </div>
     </section>
@@ -107,11 +103,9 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
       <span>&copy; 2026 Pinapagawa.</span>
-      <a href="login.html">Log in</a>
+      <a href="{{ url('/login') }}">Log in</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>

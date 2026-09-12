@@ -14,10 +14,10 @@
   <header class="app-header">
     <div class="container py-2">
       <nav class="d-flex flex-wrap justify-content-between align-items-center gap-3" aria-label="Account navigation">
-        <a class="brand" href="index.html"><span class="brand-mark">P</span>Pinapagawa</a>
+        <a class="brand" href="{{ url('/') }}"><span class="brand-mark">P</span>Pinapagawa</a>
         <div class="d-flex align-items-center gap-2">
-          <a href="profile.html" class="btn-logout">My Profile</a>
-          <a href="index.html" class="btn-logout">Posts</a>
+          <a href="{{ url('/profile') }}" class="btn-logout">My Profile</a>
+          <a href="{{ url('/') }}" class="btn-logout">Posts</a>
         </div>
       </nav>
     </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="d-flex gap-2">
           <button type="submit" class="btn btn-primary text-white">Publish post</button>
-          <a href="profile.html" class="btn btn-ghost">Cancel</a>
+          <a href="{{ url('/profile') }}" class="btn btn-ghost">Cancel</a>
         </div>
       </form>
     </div>
@@ -49,8 +49,9 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
       <span>&copy; 2026 Pinapagawa.</span>
-      <a href="index.html">Posts</a>
+      <a href="{{ url('/') }}">Posts</a>
     </div>
   </footer>
+  
 </body>
 </html>

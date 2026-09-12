@@ -22,7 +22,7 @@
           </span>
           Pinapagawa
         </a>
-        <a href="index.html" class="btn-logout">Posts</a>
+        <a href="{{ url('/') }}" class="btn-logout">Posts</a>
       </div>
     </div>
   </header>
@@ -64,7 +64,7 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
       <span>&copy; 2026 Pinapagawa.</span>
-      <a href="index.html">Posts</a>
+      <a href="{{ url('/') }}">Posts</a>
     </div>
   </footer>
 </body>

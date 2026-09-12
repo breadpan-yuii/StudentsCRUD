@@ -16,8 +16,8 @@
   <header class="site-header">
     <nav class="navbar navbar-light py-2">
       <div class="container-fluid">
-        <a class="brand" href="login.html">Pinapagawa</a>
-        <a class="btn btn-ghost btn-sm" href="register.html">Register</a>
+        <a class="brand" href="{{ url('/login') }}">Pinapagawa</a>
+        <a class="btn btn-ghost btn-sm" href="{{ url('/register') }}">Register</a>
       </div>
     </nav>
   </header>
@@ -26,7 +26,7 @@
 
     <!-- Brand / context panel -->
     <section class="auth-aside col-lg-5">
-      <a class="brand" href="index.html">
+      <a class="brand" href="{{ url('/') }}">
         <span class="brand-mark">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </span>
@@ -47,7 +47,8 @@
           <h2 class="h4 mb-1">Log in</h2>
           <p class="mb-4">Enter your account details.</p>
 
-          <form action="index.html" method="get" novalidate>
+          <form action="{{ url('/login') }}" method="POST">
+			@csrf
             <div class="mb-3">
               <label for="loginEmail" class="form-label">Username or email</label>
               <input type="text" class="form-control" id="loginEmail" name="loginEmail" placeholder="you@email.com" autocomplete="username" required />
@@ -69,13 +70,13 @@
                 <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe" />
                 <label class="form-check-label" for="rememberMe">Remember me</label>
               </div>
-              <a href="register.html" class="eyebrow-link">Register</a>
+              <a href="{{ url('/register') }}" class="eyebrow-link">Register</a>
             </div>
 
             <button type="submit" class="btn btn-primary text-white w-100">Log in</button>
           </form>
 
-          <p class="text-center mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Need an account? <a href="register.html">Register</a></p>
+          <p class="text-center mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Need an account? <a href="{{ url('/register') }}">Register</a></p>
         </div>
       </div>
     </section>
@@ -85,11 +86,9 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
       <span>&copy; 2026 Pinapagawa.</span>
-      <a href="register.html">Register</a>
+      <a href="{{ url('/register') }}">Register</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
 </body>
 </html>

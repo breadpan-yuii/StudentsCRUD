@@ -23,8 +23,8 @@
           Pinapagawa
         </a>
         <div class="d-flex align-items-center gap-2">
-          <a href="profile.html" class="btn-logout">My profile</a>
-          <a href="login.html" class="btn-logout">Log out</a>
+          <a href="{{ url('/profile') }}" class="btn-logout">My profile</a>
+          <a href="{{ url('/login') }}" class="btn-logout">Log out</a>
         </div>
       </nav>
     </div>
@@ -50,7 +50,7 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
       <span>&copy; 2026 Pinapagawa.</span>
-      <a href="profile.html">My Profile</a>
+      <a href="{{ url('/profile') }}">My Profile</a>
     </div>
   </footer>
 
